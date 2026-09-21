@@ -1,0 +1,77 @@
+/* ============================================================
+   Design tokens extracted from meerashahcounselling.com
+   (WebHealer template, fetched 2026-09-21)
+
+   Values are the *computed* result of the old inline CSS,
+   with later duplicate rules winning where the source
+   declared something twice. Notes on legacy quirks at bottom.
+   ============================================================ */
+
+:root {
+  /* ---- Colour ---------------------------------------------- */
+  --color-sage:          #D2D5C7; /* body bg, nav border-bottom, quote border, bullet separators */
+  --color-sage-pale:     #E7E9E1; /* testimonial quote fill, contact box fill */
+  --color-green-rule:    #A9C49C; /* <hr>, contact box border (2nd declaration wins) */
+  --color-olive:         #7b8964; /* h2 headings, active/hover nav, date stamp */
+  --color-olive-dark:    #5d5b3b; /* body links + dotted underline, infobar text, quote text, footer info */
+  --color-nav-idle:      #9c9f91; /* nav links at rest */
+  --color-text:          #545454; /* body copy (.para, em, contact) */
+  --color-outer-bg:      #EFEFEF; /* <body bgcolor> behind the fixed blurred photo */
+  --color-surface:       #ffffff; /* #frame / #content card */
+  --color-footer-text:   #dddddd; /* copyright bar over the blurred photo */
+  --color-heading-on-photo: #ffffff; /* h1 sits on the header photo */
+
+  /* ---- Type ------------------------------------------------ */
+  --font-display: 'Lora', Georgia, serif;             /* h1, h2, footer info block */
+  --font-body:    Arial, Helvetica, sans-serif;       /* ALL .para body copy — Lora is NOT used for body */
+  --font-weights: 400, 700 (+ italics);               /* Google Fonts: Lora:400,700,400italic,700italic */
+
+  /* Old scale: 13px root, #content = 1.2em (15.6px), then ems inside that */
+  --fs-root:      13px;
+  --fs-body:      15.6px;   /* .para  (1.2em of 13px) */
+  --fs-h1:        26.5px;   /* 1.7em of 15.6, line-height 1.1, white, right-aligned on photo */
+  --fs-h1-sub:    18.6px;   /* 0.7em of h1, line-height 1.2 */
+  --fs-h2:        21px;     /* 1.35em, line-height 1.35, margin-bottom .4em, colour olive, weight inherit (400) */
+  --fs-nav:       21.8px;   /* a.but 1.4em, letter-spacing .01em */
+  --fs-infobar:   21px;     /* tel/email block 1.35em, line-height 1.4 */
+  --fs-quote:     18px;     /* q/.Q5 1.15em, line-height 1.3 */
+  --fs-form-title: 16pt;    /* "Email Contact Form" */
+  --fs-footer:    13px;
+
+  --lh-body:      1.4;      /* .para */
+  --lh-tight:     1.1;      /* h1 */
+  --lh-h2:        1.35;
+  --lh-nav:       1.25;
+
+  /* ---- Layout ---------------------------------------------- */
+  --container:    772px;    /* fixed #frame width; header/footer JPGs are baked at 772 */
+  --content-pad:  50px;     /* .para horizontal padding; nav margin */
+  --frame-top:    30px;     /* gap above white card (0 on mobile) */
+  --header-h:     276px;    /* #logo image height */
+  --footer-wave-h: 202px;   /* #footlogo image height */
+  --nav-pad-y:    20px;
+  --nav-border:   3px solid var(--color-sage);
+  --quote-pad:    25px;     /* 20px on mobile */
+  --quote-inset:  15%;      /* q margin 0 15%; 5% on mobile */
+  --contact-pad:  15px;
+  --img-gutter:   25px;     /* .imglh / .imgrh side margin, 20px bottom */
+  --bp-mobile:    767px;    /* single breakpoint: nav -> <select>, hide date */
+
+  /* ---- Link style ------------------------------------------ */
+  /* .para a / .info a: colour olive-dark, no underline,
+     border-bottom: 1px dotted currentColor; hover removes border */
+  --link-underline: 1px dotted;
+}
+
+/* ============================================================
+   Legacy quirks — DO NOT port
+   - @media (max-width:767px) .para{font-size:2.6em} (~40px) and
+     #infobar{1.9em}: leftover from a commented-out Modernizr
+     "width=766" viewport hack. Not a design decision.
+   - Header/footer chrome (stepping-stone photo + gradient + wave)
+     is a single 772px raster. Rebuild the wave as CSS/SVG.
+   - Fixed full-viewport blurred photo (img.bg, min-width 1024px)
+     behind a centred white card.
+   - Nav on mobile collapses to a <select> with onchange redirect.
+   - Date stamp (#today) rendered server-side top-right, hidden on mobile.
+   ============================================================ */
