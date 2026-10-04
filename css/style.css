@@ -753,6 +753,10 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 8px); }
   padding: 6px;
   width: 230px;
 }
+/* Right-align only once all three columns sit on one row */
+@media (min-width: 800px) {
+  .footer-badges { justify-self: end; }
+}
 .footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.15);
   padding-top: 1.25rem;
