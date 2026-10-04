@@ -231,7 +231,7 @@
         <details open>
           <summary>Where I work</summary>
           <div class="faq-body">
-            <p>I have a private practice on Borough High Street, SE1, 3 minutes walk from London Bridge station, and near to Borough, Elephant and Castle and Bermondsey tube stations. I also work online via Zoom or telephone.</p>
+            <p>I have a private practice on Borough High Street, SE1, 3 minutes walk from London Bridge station, and near to Borough, Elephant and Castle and Bermondsey tube stations. I also work online.</p>
           </div>
         </details>
 
@@ -319,23 +319,18 @@
           <ul class="contact-details">
             <li>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.9 2z"/></svg>
-              <div><strong>Telephone</strong><a href="tel:+447967797891">07967 797891</a></div>
+              <div><strong>Telephone</strong><a href="tel:+447967797891">07967 797891</a><span class="contact-note">If I can't answer, I'm probably with a client. Your call is confidential, please leave a message</span></div>
             </li>
-            <!-- TODO (Meera): add a public email address — the old site had none, every "email" link went to the form
             <li>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
-              <div><strong>Email</strong><a href="mailto:EMAIL@EXAMPLE.COM">EMAIL@EXAMPLE.COM</a></div>
+              <div><strong>Email</strong><a href="mailto:info@meerashahcounselling.com">info@meerashahcounselling.com</a></div>
             </li>
-            -->
             <li>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              <div><strong>In person</strong>Borough High Street, London Bridge / Borough SE1<br>3 minutes walk from London Bridge station; near Borough, Elephant and Castle and Bermondsey tube stations.</div>
-            </li>
-            <li>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 22h8M12 18v4"/></svg>
-              <div><strong>Online</strong>Sessions via Zoom or telephone.</div>
+              <div><strong>In person</strong>Borough High Street, London Bridge / Borough SE1<span class="contact-note">3 minutes walk from London Bridge station.</span></div>
             </li>
           </ul>
+          <p class="crisis-note"><strong>Need help now?</strong> I'm not able to offer an emergency service. If you are in crisis, call 999 or NHS 111, or ring Samaritans free, any time, on <a href="tel:116123">116 123</a>.</p>
         </div>
 
         <!--
@@ -363,7 +358,8 @@
           </div>
           <div class="field">
             <label for="f-message">Your message</label>
-            <textarea id="f-message" name="message" required></textarea>
+            <span class="field-hint" id="f-message-hint">A little about what's bringing you to therapy, and the days or times that suit you. A few lines is plenty.</span>
+            <textarea id="f-message" name="message" aria-describedby="f-message-hint" required></textarea>
           </div>
           <label class="consent">
             <input type="checkbox" name="consent" required>
