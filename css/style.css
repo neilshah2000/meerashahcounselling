@@ -747,6 +747,7 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 8px); }
 }
 .site-footer a { color: #fff; border-bottom-color: rgba(255, 255, 255, 0.5); }
 .site-footer a:hover { color: #fff; border-bottom-color: transparent; }
+.footer-badges a { border-bottom: 0; display: inline-block; }
 .footer-badges img {
   background: #fff;
   border-radius: var(--radius);
