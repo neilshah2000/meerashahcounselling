@@ -741,7 +741,7 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 8px); }
 .footer-links { list-style: none; padding: 0; margin: 0; display: flex; gap: 1.25rem; }
 
 /* --------------------------------------------------------------------------
-   Sub pages (privacy / cookies)
+   Sub pages (privacy)
    -------------------------------------------------------------------------- */
 .page-header {
   background: var(--sage-mist);
