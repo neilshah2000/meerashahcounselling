@@ -631,7 +631,6 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 8px); }
 .contact-details svg { color: var(--olive); margin-top: 0.15rem; }
 .contact-details strong { display: block; color: var(--olive-dark); }
 .contact-details a { font-weight: 600; }
-.contact-note { display: block; font-size: var(--fs-sm); color: var(--nav-idle); margin-top: 0.2rem; }
 
 .crisis-note {
   margin: 1.75rem 0 0;
