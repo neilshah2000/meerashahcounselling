@@ -342,15 +342,23 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 8px); }
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
 }
 @media (max-width: 760px) {
-  .hero-grid { grid-template-columns: minmax(0, 1fr); position: relative; }
-  .hero-photo {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 68px;
-    border-width: 3px;
+  /* Flatten .hero-inner so the badges and photo can share a row */
+  .hero-inner { display: contents; }
+  .hero-grid {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      "title   title"
+      "sub     sub"
+      "actions actions"
+      "badges  photo";
+    gap: 0 1rem;
+    align-items: end;
   }
-  .hero h1, .hero .hero-sub { padding-right: 80px; }
+  .hero h1 { grid-area: title; }
+  .hero .hero-sub { grid-area: sub; }
+  .hero-actions { grid-area: actions; }
+  .hero .hero-badges { grid-area: badges; flex-direction: column; margin-bottom: 0; }
+  .hero-photo { grid-area: photo; width: 76px; border-width: 3px; }
 }
 .hero h1 {
   color: #fff;
