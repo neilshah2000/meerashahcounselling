@@ -747,6 +747,8 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 8px); }
 }
 .site-footer a { color: #fff; border-bottom-color: rgba(255, 255, 255, 0.5); }
 .site-footer a:hover { color: #fff; border-bottom-color: transparent; }
+.footer-memberships { list-style: none; padding: 0; margin: 0; }
+.footer-memberships li + li { margin-top: 0.6em; }
 .footer-badges a { border-bottom: 0; display: inline-block; }
 .footer-badges img {
   background: #fff;
