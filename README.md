@@ -8,8 +8,6 @@ index.html          the site — hero + sections: #home, #about-counselling-and-
 css/style.css       all styles; tokens at the top of :root
 images/             portrait, BACP/PSA badges, hero background
 privacy/            privacy policy page  (DRAFT — see TODO inside)
-old/                everything pulled from the original site — source HTML, images, extracted
-                    copy (content.md) and design tokens (design-tokens.css)
 ```
 
 ## Preview locally
