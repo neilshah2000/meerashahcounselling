@@ -1,6 +1,6 @@
 # Meera Shah Counselling — website
 
-Single-page static site (plain HTML + CSS, one small inline script for the mobile menu). No build step.
+Single-page static site (plain HTML + CSS, one small inline script for the mobile menu and contact form). No build step.
 
 ```
 index.html          the site — hero + sections: #home, #about-counselling-and-psychotherapy,
@@ -21,7 +21,7 @@ old/                everything pulled from the original site — source HTML, im
 
 Search `index.html` for `TODO` — each item is marked in place.
 
-1. **Contact form backend** — form `action` is a placeholder and the button is `disabled`. Point it at Formspree / Netlify Forms / your own handler (fields: `name`, `email`, `phone`, `message`, `consent`), then remove `disabled` and the "not yet connected" note.
+1. **Contact form backend** — wired to Web3Forms with a *test* access key. Before launch, create the live key against info@meerashahcounselling.com and swap the `access_key` value in `index.html`.
 2. **Email address** — none existed on the old site. A commented-out `<li>` in the contact section is ready to fill in.
 3. **Credentials** — the site now says "Accredited Clinical Member (UKCP)" and "Registered Member (BACP)" consistently. Meera to confirm both are accurate and current.
 4. **Reply time** — contact section promises a reply within two working days; Meera to confirm or change.

@@ -343,13 +343,16 @@
         </div>
 
         <!--
-          FORM BACKEND — TODO before launch.
-          The old site posted to WebHealer's mailforms service, which will stop
-          working once the site moves. Replace the action below with a form
-          handler (e.g. Formspree: https://formspree.io/f/XXXX, Netlify Forms,
-          or your own endpoint). Field names are name / email / phone / message.
+          Submissions go to Web3Forms, which emails them to the address registered
+          against the access key. The key is public by design. Without JavaScript the
+          form still posts normally and Web3Forms shows its own confirmation page.
         -->
-        <form class="form" method="post" action="#contact" aria-labelledby="form-title">
+        <form class="form" id="contact-form" method="post" action="https://api.web3forms.com/submit" aria-labelledby="form-title">
+          <input type="hidden" name="access_key" value="955f4dee-63e9-4228-a79d-7f9acae390c9">
+          <input type="hidden" name="subject" value="New enquiry from meerashahcounselling.com">
+          <input type="hidden" name="from_name" value="Meera Shah Counselling website">
+          <!-- Spam honeypot: hidden from people, bots tend to tick it -->
+          <input type="checkbox" name="botcheck" class="visually-hidden" tabindex="-1" autocomplete="off" aria-hidden="true">
           <h3 id="form-title" style="margin:0">Send a message</h3>
           <div class="form-row">
             <div class="field">
@@ -375,9 +378,8 @@
             <span>By sending this message you are sharing personal information with me. Please tick to confirm you have read the <a href="privacy/" target="_blank" rel="noopener">Privacy Notice</a>.</span>
           </label>
           <div class="form-actions">
-            <!-- TODO: remove `disabled` and the note once the form action is connected -->
-            <button class="btn btn-primary" type="submit" disabled>Send message</button>
-            <span class="form-note">Form not yet connected — please call <a href="tel:+447967797891">07967 797891</a></span>
+            <button class="btn btn-primary" type="submit">Send message</button>
+            <span class="form-note" id="form-status" role="status" aria-live="polite"></span>
           </div>
         </form>
       </div>
@@ -452,6 +454,27 @@
       }, { rootMargin: '-40% 0px -55% 0px' });
       sections.forEach(function (s) { io.observe(s); });
     }
+
+    // Send the contact form in the background and report the result inline
+    var form = document.getElementById('contact-form');
+    var status = document.getElementById('form-status');
+    var button = form.querySelector('button[type="submit"]');
+    form.addEventListener('submit', function (ev) {
+      ev.preventDefault();
+      button.disabled = true;
+      status.textContent = 'Sending…';
+      fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } })
+        .then(function (res) { return res.json(); })
+        .then(function (data) {
+          if (!data.success) throw new Error(data.message);
+          form.reset();
+          status.textContent = 'Thank you, your message has been sent. I\'ll be in touch soon.';
+        })
+        .catch(function () {
+          status.innerHTML = 'Sorry, something went wrong. Please call <a href="tel:+447967797891">07967 797891</a> or email <a href="mailto:info@meerashahcounselling.com">info@meerashahcounselling.com</a>.';
+        })
+        .then(function () { button.disabled = false; });
+    });
 
     document.getElementById('year').textContent = new Date().getFullYear();
   })();
