@@ -24,8 +24,15 @@ old/                everything pulled from the original site — source HTML, im
 
 ## Before launch
 
-1. **Contact form backend** — `index.html` form `action` is a placeholder. Point it at Formspree / Netlify Forms / your own handler (fields: `name`, `email`, `phone`, `message`, `consent`).
-2. **Privacy policy** — `privacy/index.html` is a draft skeleton; the old site had none. Meera to complete (retention period, date).
-3. **Hi-res headshot** — `images/meera-portrait.jpg` is 300×451 from the old site; ask for a larger original.
-4. **Credentials** — the copy says UKCP accredited (home/about) and BACP registered (FAQ/badge). Confirm both are current.
-5. If hosting on Netlify/Cloudflare, **delete the shim folders** — static files are served before `_redirects` is consulted, so the 301s never fire while they exist. On plain hosting keep the shim folders and ignore `_redirects`.
+Search `index.html` for `TODO` — each item is marked in place.
+
+1. **Contact form backend** — form `action` is a placeholder and the button is `disabled`. Point it at Formspree / Netlify Forms / your own handler (fields: `name`, `email`, `phone`, `message`, `consent`), then remove `disabled` and the "not yet connected" note.
+2. **Email address** — none existed on the old site. A commented-out `<li>` in the contact section is ready to fill in.
+3. **Credentials** — the site now says "Accredited Clinical Member (UKCP)" and "Registered Member (BACP)" consistently. Meera to confirm both are accurate and current.
+4. **Reply time** — contact section promises a reply within two working days; Meera to confirm or change.
+5. **Testimonials** — the two quotes from one client have been merged; add initials/context if clients consent.
+6. **Inclusion paragraph** — the sentence about working with Black and minority ethnic clients was garbled on the old site and has been rewritten; Meera to check it says what she means.
+7. **ADHD coaching** — the old headline mentioned it but nothing else on the site did. It's still in the `<title>`; add a sentence in the Welcome section if she offers it, or remove it from the title.
+8. **Privacy policy** — `privacy/index.html` is a draft skeleton; the old site had none.
+9. **Hi-res headshot** — `images/meera-portrait.jpg` is 300×451 from the old site.
+10. If hosting on Netlify/Cloudflare, **delete the shim folders** — static files are served before `_redirects` is consulted, so the 301s never fire while they exist. On plain hosting keep the shim folders and ignore `_redirects`.

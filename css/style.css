@@ -342,6 +342,7 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 8px); }
   color: rgba(255, 255, 255, 0.92);
 }
 .hero .hero-sub span { display: block; font-size: 0.85em; opacity: 0.85; margin-top: 0.3em; }
+
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
@@ -423,6 +424,20 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 8px); }
   padding: 1.5rem 1.75rem;
 }
 .card h3 { margin-top: 0; }
+.card h4 {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--olive);
+  margin: 1.25rem 0 0.5rem;
+}
+.card .card-note {
+  margin-top: 1.25rem;
+  font-size: var(--fs-sm);
+  color: var(--olive-dark);
+}
 
 .glance { margin: 0 0 1.25rem; }
 .glance dt {
